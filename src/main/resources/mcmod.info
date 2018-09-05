@@ -1,14 +1,14 @@
 [
 {
-  "modid": "examplemod",
-  "name": "Example Mod",
+  "modid": "vanillaplusplus",
+  "name": "Vanilla++",
   "description": "Example placeholder mod.",
   "version": "${version}",
   "mcversion": "${mcversion}",
   "url": "",
   "updateUrl": "",
-  "authorList": ["ExampleDude"],
-  "credits": "The Forge and FML guys, for making this example",
+  "authorList": ["Shotgunseat"],
+  "credits": "ShotgunSeat",
   "logoFile": "",
   "screenshots": [],
   "dependencies": []
