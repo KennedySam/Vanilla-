@@ -1,5 +1,6 @@
 package com.shotgunseat.vanillaplusplus;
 
+import com.shotgunseat.vanillaplusplus.block.ModBlocks;
 import com.shotgunseat.vanillaplusplus.proxy.CommonProxy;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
@@ -18,12 +19,9 @@ public class VanillaPlusPlus {
     @SidedProxy(clientSide = "com.shotgunseat.vanillaplusplus.proxy.ClientProxy", serverSide = "com.shotgunseat.vanillaplusplus.proxy.CommonProxy")
     public static CommonProxy proxy;
 
-    @Mod.Instance
-    public static VanillaPlusPlus instance;
-
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {
-
+        ModBlocks.preInit();
         proxy.preInit(event);
     }
 
