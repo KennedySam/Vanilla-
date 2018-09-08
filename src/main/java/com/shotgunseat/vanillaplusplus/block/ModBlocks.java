@@ -15,7 +15,7 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
  */
 public class ModBlocks {
 
-    public static Block fossil, limestone, barrelOak, barrelSpruce, barrelAcacia, barrelBigOak, barrelBirch, barrelJungle;
+    public static Block fossil, limestone, barrelOak, barrelSpruce, barrelAcacia, barrelBigOak, barrelBirch, barrelJungle, beehive;
 
     public static void preInit() {
         fossil = new Fossil(Material.ROCK, "fossil");
@@ -26,6 +26,7 @@ public class ModBlocks {
         barrelBigOak = new BarrelBigOak(Material.WOOD, "barrel_big_oak");
         barrelBirch = new BarrelBirch(Material.WOOD, "barrel_birch");
         barrelJungle = new BarrelJungle(Material.WOOD, "barrel_jungle");
+        beehive = new Beehive(Material.WOOD, "beehive");
 
         registerBlocks();
     }
@@ -39,6 +40,7 @@ public class ModBlocks {
         registerBlock(barrelBigOak);
         registerBlock(barrelJungle);
         registerBlock(barrelBirch);
+        registerBlock(beehive);
     }
 
     private static void registerBlock(Block block) {
@@ -55,6 +57,7 @@ public class ModBlocks {
         registerRender(barrelBigOak);
         registerRender(barrelSpruce);
         registerRender(barrelAcacia);
+        registerRender(beehive);
     }
 
     public static void registerRender(Block block) {

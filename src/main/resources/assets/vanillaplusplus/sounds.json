@@ -1,0 +1,7 @@
+{
+  "block.beehive.bee_buzz": {
+    "category": "ambient",
+    "subtitle": "block.beehive.bee_buzz",
+    "sounds": [ { "name": "vanillaplusplus:block/beehive/bee_buzz", "stream": true }]
+  }
+}

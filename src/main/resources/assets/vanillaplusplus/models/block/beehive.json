@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube_column",
+  "textures": {
+    "particle": "vanillaplusplus:blocks/beehive_side",
+    "down": "vanillaplusplus:blocks/beehive_top",
+    "up": "vanillaplusplus:blocks/beehive_top",
+    "north": "vanillaplusplus:blocks/beehive_front",
+    "east": "vanillaplusplus:blocks/beehive_side",
+    "south": "vanillaplusplus:blocks/beehive_side",
+    "west": "vanillaplusplus:blocks/beehive_side"
+  }
+}
