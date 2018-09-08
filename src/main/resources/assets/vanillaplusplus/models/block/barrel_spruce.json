@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube_column",
+  "textures": {
+    "particle": "blocks/planks_spruce",
+    "down": "vanillaplusplus:blocks/barrel_spruce_top",
+    "up": "vanillaplusplus:blocks/barrel_spruce_top",
+    "north": "vanillaplusplus:blocks/barrel_spruce_side",
+    "east": "vanillaplusplus:blocks/barrel_spruce_side",
+    "south": "vanillaplusplus:blocks/barrel_spruce_side",
+    "west": "vanillaplusplus:blocks/barrel_spruce_side"
+  }
+}

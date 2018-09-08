@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube_column",
+  "textures": {
+    "particle": "blocks/planks_jungle",
+    "down": "vanillaplusplus:blocks/barrel_jungle_top",
+    "up": "vanillaplusplus:blocks/barrel_jungle_top",
+    "north": "vanillaplusplus:blocks/barrel_jungle_side",
+    "east": "vanillaplusplus:blocks/barrel_jungle_side",
+    "south": "vanillaplusplus:blocks/barrel_jungle_side",
+    "west": "vanillaplusplus:blocks/barrel_jungle_side"
+  }
+}

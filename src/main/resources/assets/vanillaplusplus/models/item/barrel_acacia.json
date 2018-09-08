@@ -1,5 +1,5 @@
 {
-  "parent": "vanillaplusplus:block/fossil",
+  "parent": "vanillaplusplus:block/barrel_acacia",
   "display": {
     "thirdperson": {
       "rotation": [ 10, -45, 170 ],

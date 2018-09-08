@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube_column",
+  "textures": {
+    "particle": "blocks/planks_oak",
+    "down": "vanillaplusplus:blocks/barrel_oak_top",
+    "up": "vanillaplusplus:blocks/barrel_oak_top",
+    "north": "vanillaplusplus:blocks/barrel_oak_side",
+    "east": "vanillaplusplus:blocks/barrel_oak_side",
+    "south": "vanillaplusplus:blocks/barrel_oak_side",
+    "west": "vanillaplusplus:blocks/barrel_oak_side"
+  }
+}

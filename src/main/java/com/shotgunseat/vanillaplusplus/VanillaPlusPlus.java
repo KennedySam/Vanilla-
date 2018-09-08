@@ -1,7 +1,9 @@
 package com.shotgunseat.vanillaplusplus;
 
 import com.shotgunseat.vanillaplusplus.block.ModBlocks;
+import com.shotgunseat.vanillaplusplus.crafting.ModCrafting;
 import com.shotgunseat.vanillaplusplus.proxy.CommonProxy;
+import com.shotgunseat.vanillaplusplus.world.ModWorldManager;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.SidedProxy;
@@ -22,6 +24,8 @@ public class VanillaPlusPlus {
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {
         ModBlocks.preInit();
+        ModWorldManager.preInit();
+        ModCrafting.preInit();
         proxy.preInit(event);
     }
 

@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube_column",
+  "textures": {
+    "particle": "blocks/planks_acacia",
+    "down": "vanillaplusplus:blocks/barrel_acacia_top",
+    "up": "vanillaplusplus:blocks/barrel_acacia_top",
+    "north": "vanillaplusplus:blocks/barrel_acacia_side",
+    "east": "vanillaplusplus:blocks/barrel_acacia_side",
+    "south": "vanillaplusplus:blocks/barrel_acacia_side",
+    "west": "vanillaplusplus:blocks/barrel_acacia_side"
+  }
+}

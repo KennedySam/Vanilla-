@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "axis=y":  { "model": "vanillaplusplus:barrel_acacia" },
+    "axis=z":   { "model": "vanillaplusplus:barrel_acacia", "x": 90 },
+    "axis=x":   { "model": "vanillaplusplus:barrel_acacia", "x": 90, "y": 90 },
+    "axis=none": { "model": "vanillaplusplus:barrel_acacia" }
+  }
+}

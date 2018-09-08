@@ -15,36 +15,51 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
  */
 public class ModBlocks {
 
-    public static Block fossil;
+    public static Block fossil, limestone, barrelOak, barrelSpruce, barrelAcacia, barrelBigOak, barrelBirch, barrelJungle;
 
     public static void preInit() {
         fossil = new Fossil(Material.ROCK, "fossil");
-        
+        limestone = new Limestone(Material.ROCK, "limestone");
+        barrelOak = new BarrelOak(Material.WOOD, "barrel_oak");
+        barrelAcacia = new BarrelAcacia(Material.WOOD, "barrel_acacia");
+        barrelSpruce = new BarrelSpruce(Material.WOOD, "barrel_spruce");
+        barrelBigOak = new BarrelBigOak(Material.WOOD, "barrel_big_oak");
+        barrelBirch = new BarrelBirch(Material.WOOD, "barrel_birch");
+        barrelJungle = new BarrelJungle(Material.WOOD, "barrel_jungle");
+
         registerBlocks();
     }
 
     public static void registerBlocks() {
-        registerBlock(fossil, "fossil");
+        registerBlock(fossil);
+        registerBlock(limestone);
+        registerBlock(barrelOak);
+        registerBlock(barrelSpruce);
+        registerBlock(barrelAcacia);
+        registerBlock(barrelBigOak);
+        registerBlock(barrelJungle);
+        registerBlock(barrelBirch);
     }
 
-    private static void registerBlock(Block block, String name) {
-        GameRegistry.register(block, new ResourceLocation(VanillaPlusPlus.MODID, name));
-        GameRegistry.register(new ItemBlock(block), new ResourceLocation(VanillaPlusPlus.MODID, name));
+    private static void registerBlock(Block block) {
+        GameRegistry.register(block, new ResourceLocation(VanillaPlusPlus.MODID, block.getUnlocalizedName().substring(5)));
+        GameRegistry.register(new ItemBlock(block), new ResourceLocation(VanillaPlusPlus.MODID, block.getUnlocalizedName().substring(5)));
     }
 
     public static void registerRenders() {
         registerRender(fossil);
+        registerRender(limestone);
+        registerRender(barrelOak);
+        registerRender(barrelBirch);
+        registerRender(barrelJungle);
+        registerRender(barrelBigOak);
+        registerRender(barrelSpruce);
+        registerRender(barrelAcacia);
     }
 
-    private static void registerRender(Block block) {
+    public static void registerRender(Block block) {
         Item item = Item.getItemFromBlock(block);
-        Minecraft.getMinecraft()
-                .getRenderItem()
-                .getItemModelMesher()
-                .register(item, 0, new ModelResourceLocation(
-                                VanillaPlusPlus.MODID + ":" + item.getUnlocalizedName().substring(5), "inventory"
-                        )
-                );
+        Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(item, 0, new ModelResourceLocation(VanillaPlusPlus.MODID + ":" + item.getUnlocalizedName().substring(5), "inventory"));
     }
 
 }
