@@ -7,3 +7,18 @@ tile.barrel_spruce.name=Spruce Barrel
 tile.barrel_big_oak.name=Dark Oak Barrel
 tile.barrel_jungle.name=Jungle Barrel
 tile.barrel_birch.name=Birch Barrel
+tile.beehive.name=Beehive
+tile.tin_ore.name=Tin Ore
+tile.malachite.name=Malachite
+tile.barley.name=Barley
+tile.log_slime.name=Slime Wood
+tile.red_sandy_soil.name=Red Sandy Soil
+tile.log_redwood.name=Redwood
+
+#Items
+item.smelting_pot.name=Smelting Pot
+item.unfired_smelting_pot.name=Unfired Smelting Pot
+item.barley.name=Barley
+item.barley_seeds.name=Barley Seeds
+item.grape_seeds.name=Grape Seeds
+item.bucket_slime.name=Bucket of Slime

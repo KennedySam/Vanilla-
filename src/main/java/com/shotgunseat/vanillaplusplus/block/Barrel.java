@@ -1,13 +1,17 @@
 package com.shotgunseat.vanillaplusplus.block;
 
+import com.shotgunseat.vanillaplusplus.tileentity.TileEntityBarrel;
 import net.minecraft.block.BlockRotatedPillar;
+import net.minecraft.block.ITileEntityProvider;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
+import net.minecraft.block.properties.PropertyInteger;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.ItemStack;
+import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.SoundCategory;
@@ -19,7 +23,9 @@ import javax.annotation.Nullable;
 /**
  * Created by Sam on 08/09/2018.
  */
-public class Barrel extends BlockRotatedPillar {
+public class Barrel extends BlockRotatedPillar implements ITileEntityProvider {
+
+    public static final PropertyInteger LEVEL = PropertyInteger.create("level", 0, 3);
 
     public Barrel(Material materialIn, String name) {
         super(materialIn);
@@ -36,5 +42,13 @@ public class Barrel extends BlockRotatedPillar {
         return true;
     }
 
+    @Override
+    public TileEntity createTileEntity(World world, IBlockState state) {
+        return new TileEntityBarrel();
+    }
 
+    @Override
+    public TileEntity createNewTileEntity(World worldIn, int meta) {
+        return new TileEntityBarrel();
+    }
 }

@@ -1,0 +1,6 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "vanillaplusplus:blocks/purple_mushroom"
+  }
+}

@@ -1,6 +1,7 @@
 package com.shotgunseat.vanillaplusplus.crafting;
 
 import com.shotgunseat.vanillaplusplus.block.ModBlocks;
+import com.shotgunseat.vanillaplusplus.item.ModItems;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockPlanks;
 import net.minecraft.init.Blocks;
@@ -59,10 +60,22 @@ public class ModCrafting {
                 Character.valueOf('w'), new ItemStack(Blocks.PLANKS, 1, 1),
                 Character.valueOf('i'), Items.IRON_INGOT
         });
+        addRecipe(new ItemStack(ModItems.unfiredSmeltingPot, 1), new Object[] {
+                "   ",
+                "c c",
+                "ccc",
+                Character.valueOf('c'), Items.CLAY_BALL
+        });
+
+        addSmelting(new ItemStack(ModItems.smeltingPot, 1), new ItemStack(ModItems.unfiredSmeltingPot, 1), 0.7F);
     }
 
     public static final void addRecipe(ItemStack out, Object[] in) {
         GameRegistry.addRecipe(new ShapedOreRecipe(out, in));
+    }
+
+    public static final void addSmelting(ItemStack out, ItemStack in, float xp) {
+        GameRegistry.addSmelting(in, out, xp);
     }
 
 

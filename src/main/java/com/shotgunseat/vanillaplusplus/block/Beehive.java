@@ -1,18 +1,19 @@
 package com.shotgunseat.vanillaplusplus.block;
 
-import com.shotgunseat.vanillaplusplus.sound.ModSoundHandler;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.client.audio.SoundHandler;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.*;
+import net.minecraft.util.DamageSource;
+import net.minecraft.util.EnumFacing;
+import net.minecraft.util.EnumHand;
+import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.TextComponentTranslation;
@@ -29,8 +30,8 @@ import java.util.Random;
  */
 public class Beehive extends Block {
 
-    private boolean hasBees;
     private float honeyAmount;
+    private int nOfBees;
 
     public Beehive(Material materialIn, String name) {
         super(materialIn);
@@ -41,8 +42,9 @@ public class Beehive extends Block {
         this.setSoundType(SoundType.PLANT);
         this.setTickRandomly(true);
 
-        this.hasBees = true;
+        this.nOfBees = 10;
         honeyAmount = 10F;
+
     }
 
     public int tickRate(World worldIn)
@@ -58,14 +60,14 @@ public class Beehive extends Block {
 
     @Override
     public void onBlockClicked(World worldIn, BlockPos pos, EntityPlayer playerIn) {
-        if (this.hasBees) {
+        if (this.nOfBees > 0) {
             playerIn.attackEntityFrom(DamageSource.cactus, 1.0F);
         }
     }
 
     @Override
     public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand, @Nullable ItemStack heldItem, EnumFacing side, float hitX, float hitY, float hitZ) {
-        worldIn.playSound(playerIn, pos, ModSoundHandler.BEE_BUZZ, SoundCategory.AMBIENT, 1.0F, 1.0F);
+        playerIn.attackEntityFrom(DamageSource.cactus, 1.0F);
         if (heldItem == null) {
             return false;
         }
@@ -83,9 +85,10 @@ public class Beehive extends Block {
     }
 
     @Override
+    @SideOnly(Side.CLIENT)
     public void randomDisplayTick(IBlockState stateIn, World worldIn, BlockPos pos, Random rand)
     {
-        if (!this.hasBees) {
+        if (this.nOfBees == 0) {
             return;
         }
 
@@ -94,7 +97,6 @@ public class Beehive extends Block {
         }
 
         this.spawnParticles(worldIn, pos);
-
 
         List<EntityLivingBase> nearbyEntities = worldIn.getEntitiesWithinAABB(EntityLivingBase.class,
                 new AxisAlignedBB(pos.getX()-3.0F, pos.getY()-3.0F, pos.getZ()-3.0F,
@@ -112,7 +114,7 @@ public class Beehive extends Block {
         Random random = worldIn.rand;
         double d0 = 0.0625D;
 
-        for (int i = 0; i < 6; ++i)
+        for (int i = 0; i < this.nOfBees; ++i)
         {
             double d1 = (double)((float)pos.getX() + random.nextFloat());
             double d2 = (double)((float)pos.getY() + random.nextFloat());
@@ -150,7 +152,7 @@ public class Beehive extends Block {
 
             if (d1 < (double)pos.getX() || d1 > (double)(pos.getX() + 1) || d2 < 0.0D || d2 > (double)(pos.getY() + 1) || d3 < (double)pos.getZ() || d3 > (double)(pos.getZ() + 1))
             {
-                worldIn.spawnParticle(EnumParticleTypes.SMOKE_NORMAL, d1, d2, d3, 0.0D, 0.0D, 0.0D, new int[0]);
+                worldIn.spawnParticle(EnumParticleTypes.TOWN_AURA, d1, d2, d3, 0.0D, 0.0D, 0.0D, new int[0]);
             }
         }
     }

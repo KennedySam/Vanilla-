@@ -1,5 +1,6 @@
 package com.shotgunseat.vanillaplusplus.world;
 
+import com.shotgunseat.vanillaplusplus.world.structure.WorldGenStructure;
 import net.minecraftforge.fml.common.IWorldGenerator;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
@@ -18,5 +19,6 @@ public class ModWorldManager {
 
     private static void registerGenerators() {
         GameRegistry.registerWorldGenerator(oreGenerator, 0);
+        GameRegistry.registerWorldGenerator(new WorldGenStructure(), 2);
     }
 }

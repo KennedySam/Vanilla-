@@ -33,7 +33,9 @@ public class OreManager implements IWorldGenerator {
     }
 
     private void generateSurface(World world, Random random, int x, int y) {
-        this.addOreSpawn(ModBlocks.fossil, world, random, x, y, 16, 16, 7, 50, 70, 100);
+        this.addOreSpawn(ModBlocks.fossil, world, random, x, y, 16, 16, 7, 10, 70, 100);
+        this.addOreSpawn(ModBlocks.tinOre, world, random, x, y, 16, 16, 10, 20, 70, 128);
+        this.addOreSpawn(ModBlocks.malachite, world, random, x, y, 16, 16, 10, 20, 70, 128);
     }
 
     private void generateEnd(World world, Random random, int i, int i1) {

@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube_column",
+  "textures": {
+    "particle": "vanillaplusplus:blocks/log_slime",
+    "down": "vanillaplusplus:blocks/log_slime_top",
+    "up": "vanillaplusplus:blocks/log_slime_top",
+    "north": "vanillaplusplus:blocks/log_slime",
+    "east": "vanillaplusplus:blocks/log_slime",
+    "south": "vanillaplusplus:blocks/log_slime",
+    "west": "vanillaplusplus:blocks/log_slime"
+  }
+}

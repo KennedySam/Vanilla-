@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube_column",
+  "textures": {
+    "particle": "vanillaplusplus:blocks/log_redwood",
+    "down": "vanillaplusplus:blocks/log_redwood_top",
+    "up": "vanillaplusplus:blocks/log_redwood_top",
+    "north": "vanillaplusplus:blocks/log_redwood",
+    "east": "vanillaplusplus:blocks/log_redwood",
+    "south": "vanillaplusplus:blocks/log_redwood",
+    "west": "vanillaplusplus:blocks/log_redwood"
+  }
+}
